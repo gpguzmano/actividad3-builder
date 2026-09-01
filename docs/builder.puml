@@ -22,6 +22,8 @@ class Reserva {
     - recordatorio : boolean
     - enlace : String
     - duracionMinutos : int
+    - idiomaNotificacion : String
+    - requiereGrabacion : boolean
 }
 
 class ReservaBuilder {
@@ -35,6 +37,8 @@ class ReservaBuilder {
     + recordatorio(valor : boolean) : ReservaBuilder
     + enlace(valor : String) : ReservaBuilder
     + duracionMinutos(valor : int) : ReservaBuilder
+    + idiomaNotificacion(valor : String) : ReservaBuilder
+    + requiereGrabacion(valor : boolean) : ReservaBuilder
     + build() : Reserva
 }
 
