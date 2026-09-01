@@ -35,7 +35,26 @@ public class App {
         System.out.println("Reserva 2 con valores por defecto:");
         System.out.println(reservaPresencial);
     
-        try { 
+        Reserva reservaHibrida = new ReservaBuilder()
+                .estudiante("Gonzalo Guzmán")
+                .docente("Carlos Perez")
+                .fechaHora(LocalDateTime.of(2026, 8, 31, 18, 0))
+                .modalidad(Modalidad.HIBRIDA)
+                .motivo("Revision del proyecto")
+                .observacion("Analizar diagrama UML")
+                .prioridad(Prioridad.ALTA)
+                .recordatorio(true)
+                .enlace("https://meet.example/tutoria")
+                .duracionMinutos(45)
+                .idiomaNotificacion("en")
+                .requiereGrabacion(true)
+                .build();
+
+        System.out.println("Reserva 3:");
+        System.out.println(reservaHibrida);
+        System.out.println();
+
+        /*try { 
             Reserva invalida = new ReservaBuilder() 
                 .docente("Carlos Perez")
                 .fechaHora(LocalDateTime.now())
@@ -45,6 +64,6 @@ public class App {
             System.out.println(invalida);
         } catch (IllegalStateException e) { 
             System.out.println("Validacion correcta: " + e.getMessage());
-        }
+        }*/
     }
 }

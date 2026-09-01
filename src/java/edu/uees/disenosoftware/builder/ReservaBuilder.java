@@ -15,6 +15,8 @@ public class ReservaBuilder {
     private boolean recordatorio = false;
     private String enlace = "";
     private int duracionMinutos = 30;
+    private String idiomaNotificacion = "es";
+    private boolean requiereGrabacion = false;
 
     public ReservaBuilder estudiante(String estudiante) {
         this.estudiante = estudiante;
@@ -66,6 +68,16 @@ public class ReservaBuilder {
         return this;
     }
 
+    public ReservaBuilder idiomaNotificacion(String idiomaNotificacion) {
+        this.idiomaNotificacion = idiomaNotificacion;
+        return this;
+    }
+
+    public ReservaBuilder requiereGrabacion(boolean requiereGrabacion) {
+        this.requiereGrabacion = requiereGrabacion;
+        return this;
+    }
+
     public Reserva build() {
         validar();
 
@@ -79,7 +91,9 @@ public class ReservaBuilder {
                 prioridad,
                 recordatorio,
                 enlace,
-                duracionMinutos
+                duracionMinutos,
+                idiomaNotificacion,
+                requiereGrabacion
         );
     }
 

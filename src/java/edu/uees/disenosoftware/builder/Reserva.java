@@ -14,6 +14,8 @@ public final class Reserva {
     private final boolean recordatorio;
     private final String enlace;
     private final int duracionMinutos;
+    private final String idiomaNotificacion;
+    private final boolean requiereGrabacion;
 
     Reserva(
             String estudiante,
@@ -25,7 +27,9 @@ public final class Reserva {
             Prioridad prioridad,
             boolean recordatorio,
             String enlace,
-            int duracionMinutos) {
+            int duracionMinutos,
+            String idiomaNotificacion,
+            boolean requiereGrabacion) {
 
         this.estudiante = estudiante;
         this.docente = docente;
@@ -37,6 +41,8 @@ public final class Reserva {
         this.recordatorio = recordatorio;
         this.enlace = enlace;
         this.duracionMinutos = duracionMinutos;
+        this.idiomaNotificacion = idiomaNotificacion;
+        this.requiereGrabacion = requiereGrabacion;
     }
 
     public String getEstudiante() {
@@ -79,6 +85,14 @@ public final class Reserva {
         return duracionMinutos;
     }
 
+    public String getIdiomaNotificacion() {
+        return idiomaNotificacion;
+    }
+
+    public boolean isRequiereGrabacion() {
+        return requiereGrabacion;
+    }
+
     @Override
     public String toString() {
         return "Reserva{"
@@ -92,6 +106,8 @@ public final class Reserva {
                 + ", recordatorio=" + recordatorio
                 + ", enlace='" + enlace + '\''
                 + ", duracionMinutos=" + duracionMinutos
+                + ", idiomaNotificacion='" + idiomaNotificacion + '\''
+                + ", requiereGrabacion=" + requiereGrabacion
                 + '}';
     }
 }
